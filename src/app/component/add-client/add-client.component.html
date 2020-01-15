@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-md-6">
+        <a routerLink="/" href="#"  class="btn btn-link"><i class="fa fa-arrow-circle-o-left"></i> Back To Dashboard </a>
+    </div>
+
+    <div class="col-md-6">
+    </div>
+
+</div>
+
+<div class="card">
+    <div class="card-header">
+      Add New Client
+    </div>
+    <div class="card-body">
+        <form #f="ngForm" (ngSubmit)="onsubmit(f)">
+            <div class="form-group">
+                <label >First Name</label>
+                <input ngModel name="firstName" #firstName="ngModel" type="text" class="form-control" required>
+              </div>
+                  <div class="alert alert-danger" *ngIf="firstName.invalid && firstName.touched">firstname is required</div>
+
+                  <div class="form-group">
+                    <label >Last Name</label>
+                    <input ngModel name="lastName" #lastName="ngModel" type="text" class="form-control" required>
+                  </div>
+                      <div class="alert alert-danger" *ngIf="lastName.invalid && lastName.touched">lastname is required</div>
+    
+
+
+                  <div class="form-group">
+                    <label>Email Address</label>
+                    <input ngModel name="email" #email="ngModel" type="email" class="form-control" required email>
+                  </div>
+                  <div class="alert alert-danger" *ngIf="email.errors?.required && email.touched">Email is required</div>
+                  <div class="alert alert-danger" *ngIf="email.errors?.email && email.touched">Email is not correct</div>
+              
+
+                  <div class="form-group">
+                    <label>Phone</label>
+                    <input ngModel name="phone" #phone="ngModel" type="number" class="form-control" required minlength="11">
+                  </div>
+                  <div class="alert alert-danger" *ngIf="phone.errors?.required && phone.touched">Phone is invalid</div>
+                  <div class="alert alert-danger" *ngIf="phone.errors?.minlength && phone.touched">phone is not correct</div>
+
+                  <div class="form-group">
+                    <label>Balance</label>
+                    <input ngModel name="balance" #balance="ngModel" type="number" class="form-control" [disabled]="disabledBalanceOnAdd">
+                  </div>
+
+
+                  <input type="submit" class="btn btn-primary btn-block" value="Submit" [disabled]="f.invalid"> 
+        </form>
+  
+    </div>
+  </div>
