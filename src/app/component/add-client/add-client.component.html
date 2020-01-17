@@ -45,8 +45,9 @@
 
                   <div class="form-group">
                     <label>Balance</label>
-                    <input ngModel name="balance" #balance="ngModel" type="number" class="form-control" [disabled]="disabledBalanceOnAdd">
+                    <input required ngModel name="balance" #balance="ngModel" type="number" class="form-control" [disabled]="disabledBalanceOnAdd">
                   </div>
+                  <div class="alert alert-danger" *ngIf="balance.errors?.required && balance.touched">balance is required</div>
 
 
                   <input type="submit" class="btn btn-primary btn-block" value="Submit" [disabled]="f.invalid"> 

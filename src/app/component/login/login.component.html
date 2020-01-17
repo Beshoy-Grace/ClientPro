@@ -1,1 +1,23 @@
-<p>login works!</p>
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <div class="card">
+            <div class="card-body">
+                <img src="assets/img/logo.png" class="mx-auto d-block">
+                <h1 class="text-center">Login</h1>
+                <form #f (submit)="onsubmit(f)">
+                    <div class="form-group">
+                        <label for="email">email</label>
+                        <input type="email" class="form-control" [(ngModel)]="email" name="email" ngModel #emailop="ngModel" required email>
+                    </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" [(ngModel)]="password" ngModel #passwordop="ngModel" name="password" required >
+                        </div>
+                        <button class="btn btn-primary btn-block" type="submit">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

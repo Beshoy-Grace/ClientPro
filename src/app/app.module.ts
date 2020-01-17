@@ -18,6 +18,8 @@ import { SidebarComponent } from './component/sidebar/sidebar.component';
 
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
 import { FormsModule } from '@angular/forms'
 import { environment } from 'src/environments/environment';
 import { FlashMessagesModule } from 'angular2-flash-messages';
@@ -43,6 +45,7 @@ import { from } from 'rxjs';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularFireAuthModule,
     FlashMessagesModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,

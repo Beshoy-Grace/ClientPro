@@ -29,7 +29,16 @@ client : AngularFireObject<any>
   {
    return    this.client = this.af.object('/clients/'+id) as AngularFireObject<Client>;
   }
- 
+
+  updateclient(id,client)
+{
+    return this.clients.update(id,client);
+} 
+
+delete(id)
+{
+ this.clients.remove(id);
+}
 
   addnewclient(client)
   {
